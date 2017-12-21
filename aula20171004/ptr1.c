@@ -1,16 +1,13 @@
 #include <stdio.h>
-#include <stdlib.h>
 
-int main()
-{
-	unsigned int dado = 0xFACA8421;
-	unsigned char * ponteiro;
-	printf("Ende.: %p; dado em decimal (unsigned ) : %u\n", &dado,  &dado);
-	ponteiro = (unsigned char *) &dado;
-	int i;
-	for (i = 0; i < sizeof(dado); i++)
-		printf(" end.: %p = > %d ( decimal,) %X (hexadecimal)\n",
-				 ponteiro+i, *(ponteiro+i), ponteiro[i]);
-		return EXIT_SUCCESS;
+int main (){
+	unsigned int v = 0xFACA8421; 
+	unsigned char* p;
+	int i = 0;
+	p = &v;
+	printf ("%p \n", p);
+	for (i = 0; i < sizeof(v); i++) 
+		printf ("End: %p ; Conteudo: %i \n", (p+i), *(p + i));
+	return 0;
 }
-
+//*(p+i) = p[i]
